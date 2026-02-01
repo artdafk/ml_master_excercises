@@ -8,7 +8,7 @@ import os
 import sys
 
 # Ensure src is in the python path to find modules if run from root
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
 
 from src.data.processor import SocialAdDataProcessor
 from src.models.engine import SupervisedModelEngine
@@ -20,16 +20,20 @@ def main():
     print("="*60)
     
     # --- Configuration ---
-    # Assuming script is run from project root, or fixing path relative to this file
-    # Original path: "src/sources/kaggle/Social_Network_Ads.csv"
-    # We will try to find it relative to current execution directory
-    dataset_path = "src/sources/kaggle/Social_Network_Ads.csv"
+    # Determine project root (assuming src/main.py structure)
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    
+    # Define critical paths
+    assets_dir = os.path.join(project_root, "assets")
+    dataset_path = os.path.join(project_root, "src", "data", "kaggle", "Social_Network_Ads.csv")
+    
+    print(f"Project Root: {project_root}")
+    print(f"Assets Directory: {assets_dir}")
+    print(f"Dataset Path: {dataset_path}")
     
     if not os.path.exists(dataset_path):
-        # Fallback to absolute path or check if we are in src/models
-        # Try to resolve relative to this file
-        base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        dataset_path = os.path.join(base_dir, "src", "sources", "kaggle", "Social_Network_Ads.csv")
+        print(f"ERROR: Dataset not found at {dataset_path}")
+        return
     
     # --- 1. Data Processing ---
     print("\n[PHASE 1] Data Processing")
@@ -40,7 +44,7 @@ def main():
 
     # --- 2. Initial Visualization ---
     print("\n[PHASE 2] Exploratory Visualization")
-    visualizer = ResultsVisualizer()
+    visualizer = ResultsVisualizer(output_dir=assets_dir)
     visualizer.plot_pairplot(df)
     visualizer.plot_correlation_matrix(df)
     

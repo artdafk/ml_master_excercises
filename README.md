@@ -109,3 +109,8 @@ Observamos que **SVM** no solo alcanza el promedio de accuracy más alto (supera
 
 5.  **Implicaciones de Negocio: Optimización del ROI Publicitario**
     Desde una perspectiva puramente comercial, las métricas de Precision y Recall sugieren que el modelo SVM es el más adecuado para optimizar el presupuesto publicitario. Un alto Precisión (pocos Falsos Positivos) maximiza el ROI al asegurar que no gastamos dinero mostrando anuncios a personas que no comprarán. Un alto Recall (pocos Falsos Negativos) asegura que no perdemos oportunidades de venta. El SVM logró el mejor equilibrio (F1-Score más alto), lo que se traduce directamente en una campaña más eficiente. Implementar este modelo permitiría segmentar la base de usuarios con alta confidencialidad, dirigiendo los recursos de marketing exclusivamente a aquel 10-20% de usuarios con altísima probabilidad de conversión.
+
+
+----
+Fuente: https://github.com/artdafk/ml_master_excercises
+----
