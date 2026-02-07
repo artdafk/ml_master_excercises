@@ -8,11 +8,11 @@ import os
 import sys
 
 # Ensure src is in the python path to find modules if run from root
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 
-from src.data.processor import SocialAdDataProcessor
-from src.models.engine import SupervisedModelEngine
-from src.utils.visualizer import ResultsVisualizer
+from semana2.src.data.processor import SocialAdDataProcessor
+from semana2.src.models.engine import SupervisedModelEngine
+from semana2.src.utils.visualizer import ResultsVisualizer
 
 def main():
     print("="*60)
