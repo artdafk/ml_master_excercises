@@ -361,3 +361,7 @@ Se han consolidado **4 Arquetipos de Comportamiento Digital**:
     * *Perfil:* Jóvenes nativos digitales (~26 años).
     * *Rasgo:* Uso social constante, enfocado en tendencias.
     * *Estrategia:* Marketing de Redes Sociales y flexibilidad.
+
+-----
+Origen: https://github.com/artdafk/ml_master_excercises/tree/main/semana3
+-----
